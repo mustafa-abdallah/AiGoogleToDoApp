@@ -11,10 +11,11 @@ jobs:
           channel: stable
           cache: true
       - run: sudo apt-get update && sudo apt-get install -y libsqlite3-dev
-      - run: flutter create . --platforms=android --project-name knowledge_app
+      - run: flutter create . --platforms=android --org com.knowledgeapp --project-name knowledge_app
       - run: rm -f test/widget_test.dart
       - run: flutter pub get
       - run: dart run build_runner build --delete-conflicting-outputs
+      - run: flutter analyze
       - run: flutter test
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
