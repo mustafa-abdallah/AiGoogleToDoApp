@@ -59,7 +59,7 @@ ThemeData buildTheme(Brightness b) {
     ),
 
     // تصميم البطاقات الحديثة بزوايا دائرية 20 بكسل
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: dark ? _darkSurface : _lightSurface,
       elevation: 0,
       shape: RoundedRectangleBorder(
