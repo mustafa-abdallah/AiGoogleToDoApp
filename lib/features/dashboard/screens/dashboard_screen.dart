@@ -516,7 +516,7 @@ class _TaskMiniCard extends ConsumerWidget {
         children: [
           InkWell(
             onTap: () async {
-              await repo.toggle(task.id);
+              await repo.toggle(task);
             },
             borderRadius: BorderRadius.circular(8),
             child: Icon(
@@ -608,12 +608,8 @@ class _HabitMiniCard extends ConsumerWidget {
               color: isDone ? kEmerald : Colors.grey,
             ),
             onPressed: () async {
-              final now = DateTime.now();
-              if (isDone) {
-                await repo.clearDay(habit.id, now);
-              } else {
-                await repo.log(habit.id, date: now, status: 'done');
-              }
+              final today = formatDate(DateTime.now());
+              await repo.toggleDay(habit.id, today);
             },
           ),
         ],
