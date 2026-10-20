@@ -25,6 +25,7 @@ class TagsScreen extends ConsumerWidget {
             itemCount: list.length,
             separatorBuilder: (_, __) => const SizedBox(height: 10),
             itemBuilder: (context, i) {
+              final t = list[i];
               final dark = Theme.of(context).brightness == Brightness.dark;
               return Container(
                 decoration: BoxDecoration(
