@@ -208,6 +208,7 @@ class _WeekdayBars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = Theme.of(context).brightness == Brightness.dark;
+    final scheme = Theme.of(context).colorScheme;
     final max = counts.fold<int>(0, (a, b) => b > a ? b : a);
     final bestIdx = max == 0 ? -1 : counts.indexOf(max);
     const maxH = 90.0;
